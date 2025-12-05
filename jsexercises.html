@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exercise Document</title>
+</head>
+
+<body>
+    <h1>Exercise 1 - Grade Calculator</h1>
+    <form>
+        <label for="fullname">Full Name</label>
+        <input type="text" size="70" style="margin-left: 40px;" autofocus required><br><br>
+        <label for="email">Email</label>
+        <input type="email" size="70" style="margin-left: 70px;"><br><br>
+        <label for="examnumber">Exam Number</label>
+        <input type="number" size="70" style="margin-left: 15px;"><br><br>
+        <label for="Enteryourscore">Enter your score</label>
+        <input type="text" id="score" size="70" style="margin-left: 7px;" required><br><br>
+
+
+        <br><br>
+        <button type="button" onclick="CheckgradeFunction()" style="margin-left: 490px;">submit</button>
+        <input type="reset" value="Reset">
+
+
+        <P id="Gradescore" style="margin-left: 250px;"></P>
+
+        <h1>Exercise 2-Multiplication table</h1>
+
+        <p id="call1" style="display:none; color:red">Please use only numbers</p>
+
+        <label>Select Number</label>
+        <input type="text" id="multilast" name="multilast">
+        <button type="button" onclick="multiagainFunction()">submit</button>
+        <input type="reset" value="Reset">
+
+        <p id="output"></p>
+
+        <h1>Exercise 3-Programme 2 </h1>
+
+
+        <label>How many numbers wants to check</label>
+        <input type="number" id="act" name="act">
+        <button type="button" onclick="actFunction()">submit</button>
+
+
+        <p id="activity"></p>
+
+        <h1>Exercise 4-Computer game</h1>
+        <label>Picks a random number between 1 and 50</label>
+        <input id="game" name="game"></input>
+        <button type="button" onclick="gameFunction()">submit</button>
+        <P id="Cgame"></P>
+
+        <h1>Exercise 5-Build a simple ATM simulation </h1>
+        <p style="font-style: italic; font-size: large;" >Welcome to the NSB ATM Service</p>
+
+        <label for="pinNumber">Enter your Pin Number</label>
+        <input type="number" id="pinN" name="pinN" required >
+        <button type="button" onclick="atmFunction1()">Submit</button>
+        <p id="machine1"></p>
+       
+
+        <script src="test.js"></script>
+    </form>
+</body>
+
+</html>
