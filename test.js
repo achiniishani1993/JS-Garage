@@ -123,8 +123,7 @@ function atmFunction1() {
     let isContinue = true;
     while (isContinue) {
         let amount = prompt("Please enter your withdrawal amount", " "); //read amount
-        }
-        if (amount % 100 === 0 ) { // valid 100 multiply
+        if (amount % 100 === 0) { // valid 100 multiply
             if (amount <= money) {
                 money = money - amount
                 alert("The remaining balance!" + " " + money)
@@ -137,10 +136,60 @@ function atmFunction1() {
         }
 
         if (confirm("Do you want to do again?")) {
-            isContinue = true;
+
         } else {
             isContinue = false; // exit
         }
+
     }
+}
+
+function passFunction1() {
+
+    let createpassword = document.getElementById("pasw").value;
+    let length = createpassword,
+        lengthset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        newPass = "";
+    if (length <= 8) {
+        for (let p = 0, l = lengthset.length; p < length; p++) {
+            newPass += lengthset.charAt(Math.floor(Math.random() * l));
+        }
+
+    } else {
+        alert("invalid number try again")
+    }
+    document.getElementById("outPass").innerHTML = newPass
+}
 
 
+
+function rpsFunction() {
+    let choice = ["Rock", "Paper", "Scissors"];
+    let computerchoiceIndex = Math.floor(Math.random() * choice.length);
+    let computerchoice = choice[computerchoiceIndex]
+    console.log("computerchoice " + computerchoice + " computerchoiceInde " + computerchoiceIndex)
+    let gamecontinue = true;
+    while (gamecontinue) {
+        let userchoice = prompt("Please enter Rock, Paper or Scissors", " ");
+        console.log(userchoice)
+        if (userchoice === computerchoice) {
+            
+        } else if ((userchoice === "Rock" && computerchoice === "Scissors") || 
+                  (userchoice === "Scissors" && computerchoice === "Paper") || 
+                   (userchoice === "Paper" && computerchoice === "Rock"))
+        {
+            alert("User Winner")
+             console.log(" hi")
+        } else {
+            alert("User looser")
+        }
+
+        if (confirm("Do you want to do again?")) {
+            
+        } else {
+            gamecontinue = false; // exit
+        }
+
+
+    }
+}
