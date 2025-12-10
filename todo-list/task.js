@@ -1,10 +1,11 @@
 
-const tasklist = [];
+let tasklist = [];
 
 function taskFunction() {
     let addtask = document.getElementById("task").value;
     // add task into tasklist
-    tasklist.push({ taskname: addtask, date: new Date(), isCompleted: false });
+    let obj = { taskname: addtask, date: new Date(), isCompleted: false }
+    tasklist.push(obj); // push objects into array
     console.log("hii " + JSON.stringify(tasklist));
 
     const para = document.createElement("p");
@@ -36,13 +37,70 @@ function taskFunction() {
             } else {
                 return task;
             }
-        }) 
+        })
+        tasklist = updatedtasklist;
         console.log("hi hiii" + JSON.stringify(updatedtasklist))
         para.style.color = "green";
     });
 
     element.appendChild(newbutton) // new button also set to the element that's mean div 
 
-
 }
+
+function allFunction(){
+     document.getElementById("newinput").innerHTML = ""  // clear div
+     const element = document.getElementById("newinput");
+     
+     let alltask = tasklist.filter(task => {
+        return task.taskname
+     });
+     
+     for (i=0; i < alltask.length; ++i) {
+        let para3 =document.createElement("p");
+        para3.textContent=alltask[i].taskname;
+        element.appendChild(para3);
+     }
+}
+
+function comFunction() {
+    document.getElementById("newinput").innerHTML = ""  // clear div
+    const element = document.getElementById("newinput");
+    console.log("hiiiiiii" + JSON.stringify(tasklist))
+
+    let completetask = tasklist.filter(task => {
+        return task.isCompleted === true
+    });
+    // taskList - object array - including all the task
+    // completetask - object array - iscomplete = true tasks
+    // completetask[0] - task object
+    for (i = 0; i < completetask.length; ++i) {
+        console.log(JSON.stringify(completetask[i]))
+        let para1 = document.createElement('p');
+        para1.textContent = completetask[i].taskname;
+        element.appendChild(para1);
+    }
+    /* completetask.forEach((item) => {
+             let para1 =
+                 document.createElement("p");
+               para1.textContent =item.taskname;
+             element.appendChild(para1);
+         }); */
+}
+
+function ActFunction() {
+    document.getElementById("newinput").innerHTML = ""  // clear div
+    const element = document.getElementById("newinput");
+
+    let acttask = tasklist.filter(task => {
+        return task.isCompleted === false 
+    });
+
+    acttask.forEach((actitem) =>{
+        let para2 = document.createElement("p");
+        para2.textContent=actitem.taskname;
+        element.appendChild(para2);
+    });
+}
+
+
 
